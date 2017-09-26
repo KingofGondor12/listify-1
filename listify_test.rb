@@ -37,7 +37,6 @@ class ListifyTest < Test::Unit::TestCase
   def test_capitalize_item
     shopping = Listify.new
     shopping.add_item("cookies", 10)
-    shopping.item_capitalize
     assert_equal(shopping.pretty_list, "10 x Cookies\n");
   end
 end

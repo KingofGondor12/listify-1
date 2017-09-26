@@ -9,7 +9,7 @@ class Listify
     elsif title == "Maltesers"
       title = "Jaffas"
     end
-    @list.push({title: title, qty: qty})
+    @list.push({title: title.capitalize, qty: qty})
   end
   def pretty_list
     pretty_list = ''
@@ -20,10 +20,5 @@ class Listify
   end
   def remove_last
     @list.delete_at(-1)
-  end
-  def item_capitalize
-    @list.each do |item|
-      item[:title].capitalize
-    end
   end
 end
