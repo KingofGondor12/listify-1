@@ -9,7 +9,16 @@ class Listify
     elsif title == "Maltesers"
       title = "Jaffas"
     end
-    @list.push({title: title.capitalize, qty: qty})
+    merged = false
+    @list.each_with_index do |item, index|
+      if item[:title] == title.capitalize
+        @list[index][:qty] += qty
+        merged = true
+      end
+    end
+    if !merged
+      @list.push({ title: title.capitalize, qty: qty })
+    end
   end
   def pretty_list
     pretty_list = ''

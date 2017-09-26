@@ -39,4 +39,10 @@ class ListifyTest < Test::Unit::TestCase
     shopping.add_item("cookies", 10)
     assert_equal(shopping.pretty_list, "10 x Cookies\n");
   end
+  def test_merge
+    shopping = Listify.new
+    shopping.add_item("cake", 4)
+    shopping.add_item("cake", 8)
+    assert_equal(shopping.pretty_list, "12 x Cake\n")
+  end
 end
