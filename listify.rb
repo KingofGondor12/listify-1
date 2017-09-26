@@ -18,4 +18,12 @@ class Listify
     end
     return pretty_list
   end
+  def remove_last
+    @list.delete_at(-1)
+  end
+  def item_capitalize
+    @list.each do |item|
+      item[:title].capitalize
+    end
+  end
 end
